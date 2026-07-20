@@ -305,7 +305,7 @@ function renderList(){
   document.getElementById('app').innerHTML=`
   <div class="hero">
     <h1>Alumni Database</h1>
-    <p>Every startup that passed through Startup Awards Slovensko — from founding, through SASK, to where they are today. Click a profile to explore or edit.</p>
+    <p>Every startup that passed through Startup Awards Slovensko — from founding, through SASK, to where they are today. Click a profile to explore${READONLY?'':' or edit'}.</p>
     <div class="stats">
       <div class="stat"><b>${data.length}</b><span>startups</span></div>
       <div class="stat"><b>${nAct}</b><span>active</span></div>

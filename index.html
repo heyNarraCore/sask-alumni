@@ -139,11 +139,11 @@ select{border:1px solid var(--line);background:var(--card);border-radius:999px;p
 .ed-chip.on .bar i{background:#fff}
 /* infographics */
 .infogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px}
-.fungrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px}
-@media(max-width:860px){.fungrid{grid-template-columns:1fr}}
+.fungrid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:8px}
 /* quiz */
-.quiz-q{font-size:15px;font-weight:700;line-height:1.5;min-height:48px;margin-bottom:14px}
-.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-q{font-size:15.5px;font-weight:700;line-height:1.5;min-height:48px;margin-bottom:14px;max-width:680px}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:640px){.quiz-opts{grid-template-columns:1fr}}
 .quiz-opt{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;font-size:13.5px;font-weight:600;text-align:left;cursor:pointer;transition:.15s;color:var(--ink)}
 .quiz-opt:hover{border-color:var(--violet)}
 .quiz-opt.correct{border-color:transparent;background:var(--grad);color:#fff}
@@ -726,21 +726,12 @@ function renderList(){
     <div class="stats" id="kpiRow"></div>
   </div>
   <div class="section-label">
-    <div><h2>A bit of fun first 🎲</h2><p>Random facts generated live from the whole database.</p></div>
+    <div><h2>A bit of fun first 🎯</h2><p>A quick quiz generated live from the database — how well do you know the SASK alumni?</p></div>
   </div>
   <div class="fungrid">
-    <div class="info-card fact-card">
-      <h3>🎲 Did you know…?</h3>
-      <p class="desc">Hit the button for another random fact.</p>
-      <div class="fact-display" id="factDisplay"></div>
-      <div class="fact-controls">
-        <div class="fact-dots" id="factDots"></div>
-        <button class="fchip" onclick="nextFact(true)">🎲 Next fact</button>
-      </div>
-    </div>
     <div class="info-card">
       <h3>🎯 Take a guess!</h3>
-      <p class="desc">Quick quiz generated live from the database — how well do you know the SASK alumni?</p>
+      <p class="desc">Seven questions, fresh ones on every visit. Answers come straight from the data below.</p>
       <div id="quizBody"></div>
     </div>
   </div>
@@ -813,7 +804,6 @@ function renderList(){
   renderEditionRail();
   updateStats();
   renderListOnly();
-  initFacts();
   startQuiz();
 }
 
